@@ -1,0 +1,42 @@
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<h1>Dummy Data</h1>
+<div>
+    <button routerLink="/adddata/">
+      Add Dummy Data
+    </button>
+</div>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Employee Name</th>
+    <th>Employee Salary</th>
+    <th>Employee Age</th>
+    <th>Edit Action</th>
+    <th>Delete Action</th>
+  </tr>
+  <tr *ngFor="let item of records">
+    <td><a (click)="dummyDetail(item.id)">{{item.id}}</a></td>
+    <td>{{item.employee_name}}</td>
+    <td>{{item.employee_salary}}</td>
+    <td>{{item.employee_age}}</td>
+    <td><button [routerLink]="['/adddata', item.id]">Edit</button> </td>
+    <td><button (click)="deleteData(item.id)">Delete</button> </td>
+  </tr>
+</table>
+<div *ngIf="record">
+   <span>ID: {{record?.id}}</span>
+   <span>Employee Name: {{record?.employee_name}}</span>
+   <span>Employee Salary: {{record?.employee_salary}}</span>
+   <span>Employee Age: {{record?.employee_age}}</span>
+</div>
+</body>
+</html>

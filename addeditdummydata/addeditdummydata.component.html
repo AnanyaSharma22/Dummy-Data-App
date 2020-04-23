@@ -1,0 +1,25 @@
+<h2 >Add/Edit User Details</h2>
+<a class="close-btn" routerLink="/dummydata/" href="javascript:void(0);" title="Close">
+  <i class="material-icons">Back</i>
+</a>
+ <form  class="full-width new-pot" (ngSubmit)="onSubmit()" class="full-width new-pot" [formGroup]="addEditForm">
+<div >
+    <label class="full-width form-group"> Name
+        <input formControlName="name" maxlength="30" placeholder="Name"/>
+    </label>
+    <!-- <mat-error *ngIf="userEditForm.controls.firstname.hasError('required') && submitted">
+      Firstname is <strong>required</strong>
+    </mat-error> -->
+    <label class="full-width form-group"> Salary
+      <input formControlName="salary" maxlength="50" placeholder="Salary"/>
+    </label>
+    <label class="full-width form-group"> Age
+      <input matInput formControlName="age" maxlength="20" placeholder="Age"/>
+    </label>
+</div>
+<div>
+  <button class="theme-btn cancel-btn" (click)="close()">Cancel</button>
+  <button class="theme-btn" (click)="save()">Save</button>
+</div>
+</form>
+
